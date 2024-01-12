@@ -14,3 +14,29 @@ typedef struct tagInfo
 	string sName;
 	int iHp, iAttack;
 }INFO;
+
+typedef struct AttackItemInfo
+{
+	AttackItemInfo()
+	{
+		sName = "";
+		iLevel = 0;
+		iAttack = 0;
+		iPrice = 0;
+	}
+	string sName;
+	int iLevel, iAttack, iPrice;
+};
+
+typedef struct DefensiveItemInfo
+{
+	DefensiveItemInfo()
+	{
+		sName = "";
+		iLevel = 0;
+		iDef = 0;
+		iPrice = 0;
+	}
+	string sName;
+	int iLevel, iDef, iPrice;
+};

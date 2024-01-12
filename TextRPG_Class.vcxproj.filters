@@ -28,6 +28,9 @@
     <Filter Include="Creature">
       <UniqueIdentifier>{25017342-7c19-4a18-876d-73cbe2919dec}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shop">
+      <UniqueIdentifier>{5c47b976-c1e9-4720-bc23-c819315c7e21}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TextRPG_Class.cpp">
@@ -47,6 +50,18 @@
     </ClCompile>
     <ClCompile Include="Creature.cpp">
       <Filter>Creature</Filter>
+    </ClCompile>
+    <ClCompile Include="Shop.cpp">
+      <Filter>Shop</Filter>
+    </ClCompile>
+    <ClCompile Include="Level1_Shop.cpp">
+      <Filter>Shop</Filter>
+    </ClCompile>
+    <ClCompile Include="Level2_Shop.cpp">
+      <Filter>Shop</Filter>
+    </ClCompile>
+    <ClCompile Include="Level3_Shop.cpp">
+      <Filter>Shop</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +85,18 @@
     </ClInclude>
     <ClInclude Include="Creature.h">
       <Filter>Creature</Filter>
+    </ClInclude>
+    <ClInclude Include="Shop.h">
+      <Filter>Shop</Filter>
+    </ClInclude>
+    <ClInclude Include="Level3_Shop.h">
+      <Filter>Shop</Filter>
+    </ClInclude>
+    <ClInclude Include="Level1_Shop.h">
+      <Filter>Shop</Filter>
+    </ClInclude>
+    <ClInclude Include="Level2_Shop.h">
+      <Filter>Shop</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

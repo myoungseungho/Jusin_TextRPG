@@ -32,7 +32,7 @@ void CMainGame::Update()
 	Select_Job();
 	while (true)
 	{
-		Join_BattleGround();
+		Join_BattleGroundOrShop();
 		while (true)
 		{
 			const int PREVIOUS = 1;
@@ -63,7 +63,7 @@ void CMainGame::Select_Job()
 			continue;
 	}
 }
-void CMainGame::Join_BattleGround()
+void CMainGame::Join_BattleGroundOrShop()
 {
 	int iInput(0);
 
@@ -72,17 +72,62 @@ void CMainGame::Join_BattleGround()
 		system("cls");
 		m_pPlayer->Output_Data();
 
-		cout << "1. 사냥터 2. 종료 : ";
+		cout << "1. 사냥터 2. 종료 3. 상점 : ";
 		cin >> iInput;
 
 		if (iInput == 1)
 			break;
 		else if (iInput == 2)
 			exit(0);
+		else if (iInput == 3)
+		{
+			SelectShop();
+		}
 		else
 			continue;
 	}
 }
+
+void CMainGame::SelectShop()
+{
+	int iInput(0);
+	enum SHOP_LEVEL
+	{
+		LEVEL1 = 1,
+		LEVEL2,
+		LEVEL3
+	};
+
+	while (true)
+	{
+		cout << "1. 초급상점 2. 중급상점 3. 고급상점 4. 되돌아가기 : ";
+		cin >> iInput;
+		if (iInput >= 1 && iInput <= 3)
+		{
+			switch (iInput)
+			{
+			case SHOP_LEVEL::LEVEL1:
+				m_pShop = new Level1_Shop;
+				break;
+			case SHOP_LEVEL::LEVEL2:
+				m_pShop = new Level2_Shop;
+				break;
+			case SHOP_LEVEL::LEVEL3:
+				m_pShop = new Level3_Shop;
+				break;
+			}
+			system("cls");
+			m_pShop->Initialize();
+			m_pShop->Update();
+			system("cls");
+		}
+		else if (iInput == 4)
+			break;
+		else
+			continue;
+	}
+}
+
 int CMainGame::Select_GroundLevel()
 {
 	int iInput(0);

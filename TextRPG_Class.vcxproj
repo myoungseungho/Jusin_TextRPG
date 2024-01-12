@@ -129,18 +129,26 @@
   <ItemGroup>
     <ClCompile Include="Creature.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Level1_Shop.cpp" />
+    <ClCompile Include="Level2_Shop.cpp" />
+    <ClCompile Include="Level3_Shop.cpp" />
     <ClCompile Include="MainGame.cpp" />
     <ClCompile Include="Mediate.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Shop.cpp" />
     <ClCompile Include="TextRPG_Class.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Creature.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Level1_Shop.h" />
+    <ClInclude Include="Level2_Shop.h" />
+    <ClInclude Include="Level3_Shop.h" />
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="Mediate.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Shop.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
