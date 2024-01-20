@@ -52,7 +52,7 @@ void CShop::Update()
 		m_playerP->Print_PlayerMoney();
 
 		cout << endl << endl;
-		cout << "1. 사기 2. 팔기(미구현) 3. 되돌아가기 : ";
+		cout << "1. 사기 2. 팔기 3. 되돌아가기 : ";
 		int iInput(0);
 		cin >> iInput;
 		switch (iInput)
@@ -154,6 +154,49 @@ void CShop::Buy()
 
 void CShop::Sell()
 {
+	int iCount(0);
+	while (true)
+	{
+		system("cls");
+
+		int ivecSize = pInventory->GetVecItemInfo()->size();
+		if (ivecSize <= 0)
+		{
+			cout << "가지고 있는 장비가 없습니다" << endl;
+			system("pause");
+			return;
+		}
+
+		cout << "몇번 물건을 파시겠습니까 ? (0번 되돌아가기)" << endl;
+		pInventory->PrintInventory();
+		cout << endl << "=================" << endl;
+		cout << "현재 돈 : " << pInventory->GetMoney() << endl;
+		cout << "=================" << endl;
+
+		cin >> iCount;
+
+		if (iCount > ivecSize || iCount < 0)
+		{
+			cout << "해당 장비는 없습니다" << endl;
+			system("pause");
+			continue;
+		}
+		else if (iCount == 0)
+			return;
+		else
+		{
+			vector<CItem*>* vec = pInventory->GetVecItemInfo();
+			vector<CItem*>::iterator iter = vec->begin();
+			iter = iter + iCount - 1;
+			pInventory->SetMoney(-((*vec)[iCount - 1]->GetPrice()));
+			iter = vec->erase(iter);
+			pInventory->PrintInventory();
+			cout << "=================" << endl;
+			cout << "현재 돈 : " << pInventory->GetMoney() << endl;
+			system("pause");
+			continue;
+		}
+	}
 }
 
 
