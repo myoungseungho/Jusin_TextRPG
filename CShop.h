@@ -17,8 +17,8 @@ protected:
 	void Buy();
 	void Sell();
 protected:
-	AttackItemInfo* m_attackItemInfo;
-	DefensiveItemInfo* m_defensiveItemInfo;
+	CItem* m_pAttackItem;
+	CItem* m_pDefensiveItem;
 	const Player* m_playerP;
 	CInventory* pInventory;
 	string sShopName;

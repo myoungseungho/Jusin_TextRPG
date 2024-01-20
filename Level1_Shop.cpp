@@ -1,16 +1,25 @@
 #include "Level1_Shop.h"
+#include "CArmor.h"
+#include "CWeapon.h"
+Level1_Shop::Level1_Shop(Creature* _creatureP) : CShop(_creatureP) 
+{
 
+}
+Level1_Shop::~Level1_Shop()
+{
+	Release();
+}
 void Level1_Shop::Initialize()
 {
 	CShop::Initialize();
-	m_attackItemInfo->sName = "초급무기";
-	m_attackItemInfo->iLevel = 1;
-	m_attackItemInfo->iAttack = 3;
-	m_attackItemInfo->iPrice = 300;
-	m_defensiveItemInfo->sName = "초급방어구";
-	m_defensiveItemInfo->iLevel = 1;
-	m_defensiveItemInfo->iDef = 3;
-	m_defensiveItemInfo->iPrice = 300;
+	if (m_pAttackItem == nullptr)
+		m_pAttackItem = new CWeapon(1,300,3);
+
+	if (m_pDefensiveItem == nullptr)
+		m_pDefensiveItem = new CArmor(1,200,3);
+
+	m_pAttackItem->SetName("초급무기");
+	m_pDefensiveItem->SetName("초급방어구");
 }
 
 void Level1_Shop::Release()

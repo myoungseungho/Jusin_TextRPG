@@ -72,14 +72,14 @@
     <ClCompile Include="CInventory.cpp">
       <Filter>Item</Filter>
     </ClCompile>
-    <ClCompile Include="CWeapon.cpp">
-      <Filter>Item</Filter>
-    </ClCompile>
     <ClCompile Include="CItem.cpp">
       <Filter>Item</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CWeapon.cpp">
+      <Filter>Item</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -122,10 +122,10 @@
     <ClInclude Include="CInventory.h">
       <Filter>Item</Filter>
     </ClInclude>
-    <ClInclude Include="CWeapon.h">
+    <ClInclude Include="CItem.h">
       <Filter>Item</Filter>
     </ClInclude>
-    <ClInclude Include="CItem.h">
+    <ClInclude Include="CWeapon.h">
       <Filter>Item</Filter>
     </ClInclude>
   </ItemGroup>

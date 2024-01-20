@@ -3,7 +3,8 @@
 class Level1_Shop : public CShop
 {
 public:
-	Level1_Shop(Creature* _creatureP) : CShop(_creatureP) {};
+	Level1_Shop(Creature* _creatureP);
+	virtual ~Level1_Shop();
 public:
 	virtual void	Initialize();
 	virtual void	Release();
