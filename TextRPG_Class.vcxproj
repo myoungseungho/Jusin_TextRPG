@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -127,8 +127,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Armor.cpp" />
     <ClCompile Include="Creature.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Level1_Shop.cpp" />
     <ClCompile Include="Level2_Shop.cpp" />
     <ClCompile Include="Level3_Shop.cpp" />
@@ -137,11 +139,14 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Shop.cpp" />
     <ClCompile Include="TextRPG_Class.cpp" />
+    <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Armor.h" />
     <ClInclude Include="Creature.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Inventory.h" />
     <ClInclude Include="Level1_Shop.h" />
     <ClInclude Include="Level2_Shop.h" />
     <ClInclude Include="Level3_Shop.h" />
@@ -150,6 +155,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Shop.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

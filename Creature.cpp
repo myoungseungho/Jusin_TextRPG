@@ -7,7 +7,7 @@ Creature::Creature()
 
 Creature::~Creature()
 {
-	SAFE_DELETE(m_pInfo);
+	Release();
 }
 
 void Creature::Initialize()
@@ -21,6 +21,7 @@ void Creature::Update()
 
 void Creature::Release()
 {
+	SAFE_DELETE(m_pInfo);
 }
 
 

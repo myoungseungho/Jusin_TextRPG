@@ -4,7 +4,5 @@
 class Enemy :public Creature
 {
 public:
-
-public:
 	void	Input_Data(int _iInput);
 };

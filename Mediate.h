@@ -2,15 +2,15 @@
 #include "Define.h"
 #include "Enemy.h"
 #include "Player.h"
-class Mediate
+class CInteraction
 {
 public:
-	Mediate();
-	~Mediate();
+	CInteraction();
+	~CInteraction();
 public:
 	void Initialize(Player* _pPlayer, Enemy* _pEnemy);
 	void Attack();
-	int Die();
+	int WhoIsDie();
 private:
 	Creature* m_pPlayer;
 	Creature* m_pEnemy;

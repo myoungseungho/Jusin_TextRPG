@@ -5,7 +5,8 @@ CMainGame::CMainGame()
 {
 	m_pPlayer = nullptr;
 	m_pEnemy = nullptr;
-	m_pMediate = nullptr;
+	m_pInteraction = nullptr;
+	m_pShop = nullptr;
 }
 
 CMainGame::~CMainGame()
@@ -80,9 +81,7 @@ void CMainGame::Join_BattleGroundOrShop()
 		else if (iInput == 2)
 			exit(0);
 		else if (iInput == 3)
-		{
 			SelectShop();
-		}
 		else
 			continue;
 	}
@@ -100,6 +99,7 @@ void CMainGame::SelectShop()
 
 	while (true)
 	{
+		system("cls");
 		cout << "1. 초급상점 2. 중급상점 3. 고급상점 4. 되돌아가기 : ";
 		cin >> iInput;
 		if (iInput >= 1 && iInput <= 3)
@@ -146,8 +146,8 @@ int CMainGame::Select_GroundLevel()
 				m_pEnemy->Initialize();
 				m_pEnemy->Input_Data(iInput);
 
-				m_pMediate = new Mediate;
-				m_pMediate->Initialize((Player*)m_pPlayer, (Enemy*)m_pEnemy);
+				m_pInteraction = new CInteraction;
+				m_pInteraction->Initialize(dynamic_cast<Player*>(m_pPlayer), dynamic_cast<Enemy*>(m_pEnemy));
 				return 0;
 			}
 		}
@@ -171,8 +171,8 @@ void CMainGame::Select_AttackAndRun()
 		cin >> iInput;
 		if (iInput == 1)
 		{
-			m_pMediate->Attack();
-			int iState = m_pMediate->Die();
+			m_pInteraction->Attack();
+			int iState = m_pInteraction->WhoIsDie();
 			const int PLAYERDIE = 1;
 			const int ENEMYDIE = 2;
 

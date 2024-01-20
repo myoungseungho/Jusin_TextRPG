@@ -4,7 +4,7 @@ class Creature
 {
 public:
 	Creature();
-	~Creature();
+	virtual ~Creature();
 public:
 	void	Initialize();
 	void	Update();

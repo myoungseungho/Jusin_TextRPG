@@ -25,6 +25,6 @@ public:
 private:
 	Creature* m_pPlayer;
 	Creature* m_pEnemy;
-	Mediate* m_pMediate;
+	CInteraction* m_pInteraction;
 	Shop* m_pShop;
 };

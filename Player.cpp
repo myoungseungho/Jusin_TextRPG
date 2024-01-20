@@ -1,8 +1,6 @@
 #include "Player.h"
 #include "stdafx.h"
 
-
-
 void Player::Input_Data(int _iInput)
 {
 	if (m_pInfo == nullptr)

@@ -5,10 +5,6 @@
 class Player : public Creature
 {
 public:
-
-public:
-
-
 	virtual void	Input_Data(int _iInput);
 };
 

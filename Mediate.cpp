@@ -1,18 +1,18 @@
 #include "Mediate.h"
 
-Mediate::Mediate()
+CInteraction::CInteraction()
 {
 	m_pPlayer = nullptr;
 	m_pEnemy = nullptr;
 }
 
-Mediate::~Mediate()
+CInteraction::~CInteraction()
 {
 	SAFE_DELETE(m_pPlayer);
 	SAFE_DELETE(m_pEnemy);
 }
 
-void Mediate::Initialize(Player* _pPlayer, Enemy* _pEnemy)
+void CInteraction::Initialize(Player* _pPlayer, Enemy* _pEnemy)
 {
 	if (m_pPlayer == nullptr)
 		m_pPlayer = _pPlayer;
@@ -21,7 +21,7 @@ void Mediate::Initialize(Player* _pPlayer, Enemy* _pEnemy)
 		m_pEnemy = _pEnemy;
 }
 
-void Mediate::Attack()
+void CInteraction::Attack()
 {
 	INFO* playerInfo = m_pPlayer->GetInfo();
 	INFO* enemyInfo = m_pEnemy->GetInfo();
@@ -30,7 +30,7 @@ void Mediate::Attack()
 	m_pEnemy->Set_Damage(m_pPlayer->Get_Attack());
 }
 
-int Mediate::Die()
+int CInteraction::WhoIsDie()
 {
 	bool bIsPlayerDie = m_pPlayer->IsDie();
 	bool bIsEnemyDie = m_pEnemy->IsDie();
