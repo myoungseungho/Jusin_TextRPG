@@ -1,9 +1,9 @@
 #include "CInventory.h"
 #include "stdafx.h"
+#include "Define.h"
 
 CInventory::CInventory(size_t _iLimit, int _iMoney) : m_iInventoryLimit(_iLimit), m_iMoney(_iMoney)
 {
-	m_vecItemP.reserve(_iLimit);
 }
 
 CInventory::~CInventory()
@@ -13,6 +13,8 @@ CInventory::~CInventory()
 
 void CInventory::Initialize()
 {
+	m_vecItemP = new vector<CItem*>;
+	m_vecItemP->reserve(m_iInventoryLimit);
 }
 
 void CInventory::Update()
@@ -21,6 +23,7 @@ void CInventory::Update()
 
 void CInventory::Release()
 {
+	SAFE_DELETE(m_vecItemP);
 }
 
 int CInventory::GetMoney() const
@@ -28,27 +31,35 @@ int CInventory::GetMoney() const
 	return m_iMoney;
 }
 
-int CInventory::SetMoney(int iBuyMoney)
+void CInventory::SetMoney(int iBuyMoney)
 {
-	//제대로 살 수 있으면 1 반환
-	if (m_iMoney >= iBuyMoney)
-	{
-		m_iMoney -= iBuyMoney;
-		return 1;
-	}
-	//돈없으면 0 반환
-	else
-		return 0;
+	m_iMoney -= iBuyMoney;
 }
 
-int CInventory::AddItem(CItem* _pItem)
+void CInventory::AddItem(CItem* _pItem)
 {
-	//벡터 꽉찼을 때.
-	if (m_vecItemP.size() == m_iInventoryLimit)
-		return 0;
-	else
-	{
-		m_vecItemP.push_back(_pItem);
-		return 1;
-	}
+	m_vecItemP->push_back(_pItem);
 }
+
+bool CInventory::CanBuyMoney(int iBuyMoney)
+{
+	if (m_iMoney >= iBuyMoney)
+		return true;
+	else
+		return false;
+}
+
+bool CInventory::CanAddItem()
+{
+	if (m_vecItemP->size() == m_iInventoryLimit)
+		return false;
+	else
+		return true;
+}
+
+vector<CItem*>* CInventory::GetVecItemInfo() const
+{
+	return m_vecItemP;
+}
+
+

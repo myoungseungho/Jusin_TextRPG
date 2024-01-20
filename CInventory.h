@@ -13,11 +13,14 @@ public:
 	void	Release();
 public:
 	int GetMoney() const;
-	int SetMoney(int iBuyMoney);
-	int AddItem(CItem* _pItem);
+	void SetMoney(int iBuyMoney);
+	void AddItem(CItem* _pItem);
+	bool CanBuyMoney(int iBuyMoney);
+	bool CanAddItem();
+	vector<CItem*>* GetVecItemInfo() const;
 private:
 	int m_iMoney;
 	int m_iInventoryLimit;
-	vector<CItem*> m_vecItemP;
+	vector<CItem*>* m_vecItemP;
 };
 

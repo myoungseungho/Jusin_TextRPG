@@ -95,10 +95,13 @@ void CShop::Print_Item()
 void CShop::Buy()
 {
 	int iInput(0);
-	int iComplete(-1);
 	while (true)
 	{
 		system("cls");
+		int iPrice;
+		bool bIsCanBuyMoney;
+		bool bIsCanAddItem;
+
 		Print_Item();
 		cout << endl;
 		m_playerP->Print_PlayerMoney();
@@ -108,15 +111,42 @@ void CShop::Buy()
 		switch (iInput)
 		{
 		case 1:
-			iComplete = pInventory->SetMoney(m_pAttackItem->GetPrice());
+			iPrice = m_pAttackItem->GetPrice();
+			bIsCanBuyMoney = pInventory->CanBuyMoney(iPrice);
+			bIsCanAddItem = pInventory->CanAddItem();
+
+			if (!bIsCanBuyMoney)
+				cout << "잔액이 부족합니다" << endl;
+			else if (!bIsCanAddItem)
+				cout << "인벤토리가 꽉찼습니다" << endl;
+			else if (bIsCanAddItem && bIsCanBuyMoney)
+			{
+				cout << "성공적으로 구매했습니다" << endl;
+				pInventory->SetMoney(iPrice);
+				pInventory->AddItem(m_pAttackItem);
+			}
+			PrintInventory();
 			break;
 		case 2:
-			iComplete = pInventory->SetMoney(m_pDefensiveItem->GetPrice());
+			iPrice = m_pDefensiveItem->GetPrice();
+			bIsCanBuyMoney = pInventory->CanBuyMoney(iPrice);
+			bIsCanAddItem = pInventory->CanAddItem();
+
+			if (!bIsCanBuyMoney)
+				cout << "잔액이 부족합니다" << endl;
+			else if (!bIsCanAddItem)
+				cout << "인벤토리가 꽉찼습니다" << endl;
+			else if (bIsCanBuyMoney && bIsCanAddItem)
+			{
+				cout << "성공적으로 구매했습니다" << endl;
+				pInventory->SetMoney(iPrice);
+				pInventory->AddItem(m_pDefensiveItem);
+			}
+			PrintInventory();
 			break;
 		case 3:
 			return;
 		}
-		iComplete == 0 ? cout << "잔액이 부족합니다" << endl : cout << "성공적으로 구매했습니다" << endl;
 		system("pause");
 	}
 
@@ -124,6 +154,11 @@ void CShop::Buy()
 
 void CShop::Sell()
 {
+}
+
+void CShop::PrintInventory()
+{
+	cout << "현재 아이템 수 : " << pInventory->GetVecItemInfo()->size() << " / " << pInventory->GetVecItemInfo()->capacity() << endl;
 }
 
 
