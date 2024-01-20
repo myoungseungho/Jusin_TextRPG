@@ -31,12 +31,15 @@
     <Filter Include="Shop">
       <UniqueIdentifier>{5c47b976-c1e9-4720-bc23-c819315c7e21}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Item">
+      <UniqueIdentifier>{34e2274b-8f82-4c36-93ac-28b4e321b61e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TextRPG_Class.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="MainGame.cpp">
+    <ClCompile Include="CMainGame.cpp">
       <Filter>MainGame</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
@@ -45,13 +48,13 @@
     <ClCompile Include="Enemy.cpp">
       <Filter>Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="Mediate.cpp">
+    <ClCompile Include="CInteraction.cpp">
       <Filter>Mediate</Filter>
     </ClCompile>
     <ClCompile Include="Creature.cpp">
       <Filter>Creature</Filter>
     </ClCompile>
-    <ClCompile Include="Shop.cpp">
+    <ClCompile Include="CShop.cpp">
       <Filter>Shop</Filter>
     </ClCompile>
     <ClCompile Include="Level1_Shop.cpp">
@@ -63,12 +66,24 @@
     <ClCompile Include="Level3_Shop.cpp">
       <Filter>Shop</Filter>
     </ClCompile>
+    <ClCompile Include="CArmor.cpp">
+      <Filter>Item</Filter>
+    </ClCompile>
+    <ClCompile Include="CInventory.cpp">
+      <Filter>Item</Filter>
+    </ClCompile>
+    <ClCompile Include="CWeapon.cpp">
+      <Filter>Item</Filter>
+    </ClCompile>
+    <ClCompile Include="CItem.cpp">
+      <Filter>Item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="MainGame.h">
+    <ClInclude Include="CMainGame.h">
       <Filter>MainGame</Filter>
     </ClInclude>
     <ClInclude Include="Define.h">
@@ -80,13 +95,13 @@
     <ClInclude Include="Enemy.h">
       <Filter>Enemy</Filter>
     </ClInclude>
-    <ClInclude Include="Mediate.h">
+    <ClInclude Include="CInteraction.h">
       <Filter>Mediate</Filter>
     </ClInclude>
     <ClInclude Include="Creature.h">
       <Filter>Creature</Filter>
     </ClInclude>
-    <ClInclude Include="Shop.h">
+    <ClInclude Include="CShop.h">
       <Filter>Shop</Filter>
     </ClInclude>
     <ClInclude Include="Level3_Shop.h">
@@ -97,6 +112,18 @@
     </ClInclude>
     <ClInclude Include="Level2_Shop.h">
       <Filter>Shop</Filter>
+    </ClInclude>
+    <ClInclude Include="CArmor.h">
+      <Filter>Item</Filter>
+    </ClInclude>
+    <ClInclude Include="CInventory.h">
+      <Filter>Item</Filter>
+    </ClInclude>
+    <ClInclude Include="CWeapon.h">
+      <Filter>Item</Filter>
+    </ClInclude>
+    <ClInclude Include="CItem.h">
+      <Filter>Item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

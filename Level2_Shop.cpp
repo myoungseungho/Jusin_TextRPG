@@ -2,7 +2,7 @@
 
 void Level2_Shop::Initialize()
 {
-	Shop::Initialize();
+	CShop::Initialize();
 	m_attackItemInfo->sName = "중급무기";
 	m_attackItemInfo->iLevel = 2;
 	m_attackItemInfo->iAttack = 6;

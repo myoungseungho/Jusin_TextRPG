@@ -1,6 +1,11 @@
 #include "Player.h"
 #include "stdafx.h"
 
+Player::~Player()
+{
+	Release();
+}
+
 void Player::Input_Data(int _iInput)
 {
 	if (m_pInfo == nullptr)
@@ -27,4 +32,22 @@ void Player::Input_Data(int _iInput)
 		m_pInfo->iHp = 100;
 		m_pInfo->iAttack = 10;
 	}
+}
+
+void Player::Initialize()
+{
+	Creature::Initialize();
+
+	m_InventoryP = new CInventory(5,5000);
+	m_InventoryP->Initialize();
+}
+
+void Player::Release()
+{
+	SAFE_DELETE(m_InventoryP);
+}
+
+CInventory* Player::GetInventoryP() const
+{
+	return m_InventoryP;
 }

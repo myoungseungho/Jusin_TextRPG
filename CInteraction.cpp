@@ -1,4 +1,4 @@
-#include "Mediate.h"
+#include "CInteraction.h"
 
 CInteraction::CInteraction()
 {

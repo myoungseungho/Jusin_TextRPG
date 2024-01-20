@@ -1,5 +1,5 @@
 ﻿#include "stdafx.h"
-#include "MainGame.h"
+#include "CMainGame.h"
 int main()
 {
 	CMainGame MainGame;

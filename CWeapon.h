@@ -1,11 +1,11 @@
 #pragma once
 #include "stdafx.h"
-#include "Item.h"
-class Armor : public Item
+#include "CItem.h"
+class CWeapon : CItem
 {
 public:
-	Armor();
-	virtual ~Armor();
+	CWeapon();
+	virtual ~CWeapon();
 
 public:
 	void	Initialize();

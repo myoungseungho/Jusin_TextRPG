@@ -2,8 +2,8 @@
 
 #include "Player.h"
 #include "Enemy.h"
-#include "Mediate.h"
-#include "Shop.h"
+#include "CInteraction.h"
+#include "CShop.h"
 #include "Level1_Shop.h"
 #include "Level2_Shop.h"
 #include "Level3_Shop.h"
@@ -26,5 +26,5 @@ private:
 	Creature* m_pPlayer;
 	Creature* m_pEnemy;
 	CInteraction* m_pInteraction;
-	Shop* m_pShop;
+	CShop* m_pShop;
 };

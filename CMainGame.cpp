@@ -1,4 +1,4 @@
-#include "MainGame.h"
+#include "CMainGame.h"
 #include "stdafx.h"
 
 CMainGame::CMainGame()
@@ -107,13 +107,13 @@ void CMainGame::SelectShop()
 			switch (iInput)
 			{
 			case SHOP_LEVEL::LEVEL1:
-				m_pShop = new Level1_Shop;
+				m_pShop = new Level1_Shop(m_pPlayer);
 				break;
 			case SHOP_LEVEL::LEVEL2:
-				m_pShop = new Level2_Shop;
+				m_pShop = new Level2_Shop(m_pPlayer);
 				break;
 			case SHOP_LEVEL::LEVEL3:
-				m_pShop = new Level3_Shop;
+				m_pShop = new Level3_Shop(m_pPlayer);
 				break;
 			}
 			system("cls");

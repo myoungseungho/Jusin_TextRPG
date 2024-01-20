@@ -6,9 +6,9 @@ public:
 	Creature();
 	virtual ~Creature();
 public:
-	void	Initialize();
+	virtual void	Initialize();
 	void	Update();
-	void	Release();
+	virtual void	Release();
 public:
 	void Set_Damage(int _iAttack);
 	void	Output_Data();
