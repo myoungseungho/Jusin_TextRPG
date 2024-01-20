@@ -40,3 +40,15 @@ int CInventory::SetMoney(int iBuyMoney)
 	else
 		return 0;
 }
+
+int CInventory::AddItem(CItem* _pItem)
+{
+	//∫§≈Õ ≤À√°¿ª ∂ß.
+	if (m_vecItemP.size() == m_iInventoryLimit)
+		return 0;
+	else
+	{
+		m_vecItemP.push_back(_pItem);
+		return 1;
+	}
+}

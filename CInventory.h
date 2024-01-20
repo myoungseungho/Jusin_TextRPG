@@ -14,6 +14,7 @@ public:
 public:
 	int GetMoney() const;
 	int SetMoney(int iBuyMoney);
+	int AddItem(CItem* _pItem);
 private:
 	int m_iMoney;
 	int m_iInventoryLimit;
