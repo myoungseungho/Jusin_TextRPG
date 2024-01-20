@@ -18,6 +18,7 @@ public:
 	bool CanBuyMoney(int iBuyMoney);
 	bool CanAddItem();
 	vector<CItem*>* GetVecItemInfo() const;
+	void PrintInventory();
 private:
 	int m_iMoney;
 	int m_iInventoryLimit;

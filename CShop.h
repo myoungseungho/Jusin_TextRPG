@@ -16,7 +16,6 @@ protected:
 	virtual void Print_Item();
 	void Buy();
 	void Sell();
-	void PrintInventory();
 protected:
 	CItem* m_pAttackItem;
 	CItem* m_pDefensiveItem;

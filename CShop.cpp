@@ -125,7 +125,7 @@ void CShop::Buy()
 				pInventory->SetMoney(iPrice);
 				pInventory->AddItem(m_pAttackItem);
 			}
-			PrintInventory();
+			pInventory->PrintInventory();
 			break;
 		case 2:
 			iPrice = m_pDefensiveItem->GetPrice();
@@ -142,7 +142,7 @@ void CShop::Buy()
 				pInventory->SetMoney(iPrice);
 				pInventory->AddItem(m_pDefensiveItem);
 			}
-			PrintInventory();
+			pInventory->PrintInventory();
 			break;
 		case 3:
 			return;
@@ -156,9 +156,5 @@ void CShop::Sell()
 {
 }
 
-void CShop::PrintInventory()
-{
-	cout << "현재 아이템 수 : " << pInventory->GetVecItemInfo()->size() << " / " << pInventory->GetVecItemInfo()->capacity() << endl;
-}
 
 

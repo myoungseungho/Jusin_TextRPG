@@ -57,6 +57,17 @@ bool CInventory::CanAddItem()
 		return true;
 }
 
+void CInventory::PrintInventory()
+{
+	for (vector<CItem*>::iterator iter = m_vecItemP->begin(); iter!=m_vecItemP->end(); ++iter)
+	{
+		cout << (*iter)->GetName() << endl;
+	}
+
+	cout << "===================" << endl;
+	cout << "현재 아이템 수 : " << m_vecItemP->size() << " / " << m_vecItemP->capacity() << endl;
+}
+
 vector<CItem*>* CInventory::GetVecItemInfo() const
 {
 	return m_vecItemP;
