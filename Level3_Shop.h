@@ -1,6 +1,5 @@
 #pragma once
 #include "CShop.h"
-#include "Creature.h"
 class Level3_Shop : public CShop
 {
 public:

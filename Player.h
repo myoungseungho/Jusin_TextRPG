@@ -13,6 +13,7 @@ public:
 	virtual void Initialize();
 	virtual void Release();
 public:
+	void Print_PlayerMoney() const;
 	CInventory* GetInventoryP() const;
 private:
 	CInventory* m_InventoryP;

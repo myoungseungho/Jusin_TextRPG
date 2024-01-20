@@ -139,6 +139,7 @@
     <ClCompile Include="CInteraction.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="CShop.cpp" />
+    <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="TextRPG_Class.cpp" />
     <ClCompile Include="CWeapon.cpp" />
   </ItemGroup>

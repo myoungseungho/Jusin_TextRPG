@@ -4,9 +4,6 @@
 #include "Enemy.h"
 #include "CInteraction.h"
 #include "CShop.h"
-#include "Level1_Shop.h"
-#include "Level2_Shop.h"
-#include "Level3_Shop.h"
 class CMainGame
 {
 public:

@@ -40,11 +40,3 @@ typedef struct DefensiveItemInfo
 	string sName;
 	int iLevel, iDef, iPrice;
 };
-
-typedef struct PlayerItemInfo
-{
-	PlayerItemInfo()
-	{
-
-	}
-};

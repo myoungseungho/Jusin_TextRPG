@@ -13,6 +13,7 @@ public:
 	void	Release();
 public:
 	int GetMoney() const;
+	int SetMoney(int iBuyMoney);
 private:
 	int m_iMoney;
 	int m_iInventoryLimit;

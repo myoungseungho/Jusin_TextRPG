@@ -1,6 +1,8 @@
 #include "CMainGame.h"
 #include "stdafx.h"
-
+#include "Level1_Shop.h"
+#include "Level2_Shop.h"
+#include "Level3_Shop.h"
 CMainGame::CMainGame()
 {
 	m_pPlayer = nullptr;

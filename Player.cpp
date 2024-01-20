@@ -38,13 +38,20 @@ void Player::Initialize()
 {
 	Creature::Initialize();
 
-	m_InventoryP = new CInventory(5,5000);
+	m_InventoryP = new CInventory(5, 5000);
 	m_InventoryP->Initialize();
 }
 
 void Player::Release()
 {
 	SAFE_DELETE(m_InventoryP);
+}
+
+void Player::Print_PlayerMoney() const
+{
+	int iMoney = m_InventoryP->GetMoney();
+	cout << "====================" << endl;
+	cout << "보유 금액 : " << iMoney << "원" << endl;
 }
 
 CInventory* Player::GetInventoryP() const
