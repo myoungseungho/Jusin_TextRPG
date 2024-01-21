@@ -4,6 +4,7 @@
 #include "Enemy.h"
 #include "CInteraction.h"
 #include "CShop.h"
+#include "CCloset.h"
 class CMainGame
 {
 public:
@@ -19,9 +20,11 @@ public:
 	void SelectShop();
 	int Select_GroundLevel();
 	void Select_AttackAndRun();
+	void 	SelectCloset();
 private:
 	Creature* m_pPlayer;
 	Creature* m_pEnemy;
 	CInteraction* m_pInteraction;
 	CShop* m_pShop;
+	CCloset* m_pCloset;
 };

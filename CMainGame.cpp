@@ -3,16 +3,19 @@
 #include "Level1_Shop.h"
 #include "Level2_Shop.h"
 #include "Level3_Shop.h"
+#include "CCloset.h"
 CMainGame::CMainGame()
 {
 	m_pPlayer = nullptr;
 	m_pEnemy = nullptr;
 	m_pInteraction = nullptr;
 	m_pShop = nullptr;
+	m_pCloset = nullptr;
 }
 
 CMainGame::~CMainGame()
 {
+	Release();
 }
 
 int GetRandom()
@@ -75,7 +78,7 @@ void CMainGame::Join_BattleGroundOrShop()
 		system("cls");
 		m_pPlayer->Output_Data();
 
-		cout << "1. 사냥터 2. 종료 3. 상점 : ";
+		cout << "1. 사냥터 2. 종료 3. 상점 4. 옷장 : ";
 		cin >> iInput;
 
 		if (iInput == 1)
@@ -84,9 +87,22 @@ void CMainGame::Join_BattleGroundOrShop()
 			exit(0);
 		else if (iInput == 3)
 			SelectShop();
+		else if (iInput == 4)
+			SelectCloset();
 		else
 			continue;
 	}
+}
+
+void CMainGame::SelectCloset()
+{
+	if (m_pCloset == nullptr)
+	{
+		m_pCloset = new CCloset;
+		m_pCloset->Initialize((dynamic_cast<Player*>(m_pPlayer))->GetInventoryP());
+	}
+
+	m_pCloset->Update();
 }
 
 void CMainGame::SelectShop()
@@ -205,7 +221,10 @@ void CMainGame::Select_AttackAndRun()
 	}
 }
 
+
+
 void CMainGame::Release()
 {
+	SAFE_DELETE(m_pShop);
 }
 

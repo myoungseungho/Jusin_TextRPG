@@ -34,6 +34,9 @@
     <Filter Include="Item">
       <UniqueIdentifier>{34e2274b-8f82-4c36-93ac-28b4e321b61e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Closet">
+      <UniqueIdentifier>{695ee027-d859-463c-860c-2b63cb6b9791}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TextRPG_Class.cpp">
@@ -81,6 +84,9 @@
     <ClCompile Include="CWeapon.cpp">
       <Filter>Item</Filter>
     </ClCompile>
+    <ClCompile Include="CCloset.cpp">
+      <Filter>Closet</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -127,6 +133,9 @@
     </ClInclude>
     <ClInclude Include="CWeapon.h">
       <Filter>Item</Filter>
+    </ClInclude>
+    <ClInclude Include="CCloset.h">
+      <Filter>Closet</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

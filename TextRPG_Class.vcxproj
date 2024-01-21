@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CArmor.cpp" />
+    <ClCompile Include="CCloset.cpp" />
     <ClCompile Include="CItem.cpp" />
     <ClCompile Include="Creature.cpp" />
     <ClCompile Include="Enemy.cpp" />
@@ -145,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CArmor.h" />
+    <ClInclude Include="CCloset.h" />
     <ClInclude Include="CItem.h" />
     <ClInclude Include="Creature.h" />
     <ClInclude Include="Define.h" />
