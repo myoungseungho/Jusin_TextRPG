@@ -33,13 +33,14 @@ void CCloset::Update()
 			cout << "==============" << endl << endl;
 			m_pInventory->PrintEquipmentStatus();
 			cout << endl << endl;
-			cout << "어떤 장비를 착용하시겠습니까?" << endl;
+			cout << "어떤 장비를 착용하시겠습니까? (0번 되돌아가기)" << endl;
 			cin >> iInput;
+
+			if (iInput == 0)
+				return;
 
 			vector<CItem*>* vec = m_pInventory->GetVecItemInfo();
 			m_pInventory->SetItem(((*vec)[iInput - 1]));
-			m_pInventory->PrintEquipmentStatus();
-			system("pause");
 		}
 	}
 }
