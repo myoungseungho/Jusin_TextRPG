@@ -17,10 +17,10 @@ protected:
 	void Buy();
 	void Sell();
 protected:
-	CItem* m_pAttackItem;
-	CItem* m_pDefensiveItem;
 	const Player* m_playerP;
 	CInventory* pInventory;
 	string sShopName;
+	AttackItemInfo* m_pAttackItemInfo;
+	DefensiveItemInfo* m_pDefensiveItemInfo;
 };
 

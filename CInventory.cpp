@@ -45,6 +45,10 @@ void CInventory::AddItem(CItem* _pItem)
 	m_vecItemP->push_back(_pItem);
 }
 
+void CInventory::RemoveItem(CItem* _pItem)
+{
+}
+
 bool CInventory::CanBuyMoney(int iBuyMoney)
 {
 	if (m_iMoney >= iBuyMoney)

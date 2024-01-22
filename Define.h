@@ -17,12 +17,12 @@ typedef struct tagInfo
 
 typedef struct AttackItemInfo
 {
-	AttackItemInfo()
+	AttackItemInfo(string _sName, int _iLevel, int _iPrice, int _iAttack)
 	{
-		sName = "";
-		iLevel = 0;
-		iAttack = 0;
-		iPrice = 0;
+		sName = _sName;
+		iLevel = _iLevel;
+		iPrice = _iPrice;
+		iAttack = _iAttack;
 	}
 	string sName;
 	int iLevel, iAttack, iPrice;
@@ -30,12 +30,12 @@ typedef struct AttackItemInfo
 
 typedef struct DefensiveItemInfo
 {
-	DefensiveItemInfo()
+	DefensiveItemInfo(string _sName, int _iLevel, int _iPrice, int _iDef)
 	{
-		sName = "";
-		iLevel = 0;
-		iDef = 0;
-		iPrice = 0;
+		sName = _sName;
+		iLevel = _iLevel;
+		iPrice = _iPrice;
+		iDef = _iDef;
 	}
 	string sName;
 	int iLevel, iDef, iPrice;

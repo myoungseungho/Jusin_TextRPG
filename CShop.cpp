@@ -8,10 +8,10 @@
 
 CShop::CShop(Creature* _playerP)
 {
-	m_pAttackItem = nullptr;
-	m_pDefensiveItem = nullptr;
 	m_playerP = nullptr;
 	pInventory = nullptr;
+	m_pAttackItemInfo = nullptr;
+	m_pDefensiveItemInfo = nullptr;
 
 	if (m_playerP == nullptr)
 	{
@@ -71,16 +71,11 @@ void CShop::Update()
 
 void CShop::Release()
 {
-	SAFE_DELETE(m_pAttackItem);
-	SAFE_DELETE(m_pDefensiveItem);
 }
 
 
 void CShop::Print_Item()
 {
-	if (m_pAttackItem == nullptr || m_pDefensiveItem == nullptr)
-		return;
-
 	cout << m_pAttackItem->GetName() << endl;
 	cout << "가격 : " << m_pAttackItem->GetPrice() << endl;
 	cout << "아이템 레벨 : " << m_pAttackItem->GetLevel() << endl;
@@ -185,11 +180,13 @@ void CShop::Sell()
 			return;
 		else
 		{
+			//인벤토리에서 지웠지만 Shop에서 생성한 아이템도 지워야 함.
 			vector<CItem*>* vec = pInventory->GetVecItemInfo();
 			vector<CItem*>::iterator iter = vec->begin();
 			iter = iter + iCount - 1;
 			pInventory->SetMoney(-((*vec)[iCount - 1]->GetPrice()));
 			iter = vec->erase(iter);
+
 			pInventory->PrintInventory();
 			cout << "=================" << endl;
 			cout << "현재 돈 : " << pInventory->GetMoney() << endl;

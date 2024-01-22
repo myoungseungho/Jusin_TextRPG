@@ -13,6 +13,7 @@ public:
 public:
 	void SetMoney(int iBuyMoney);
 	void AddItem(CItem* _pItem);
+	void RemoveItem(CItem* _pItem);
 	void PrintInventory();
 	void PrintEquipmentStatus();
 	void SetItem(CItem* _pItem);
