@@ -226,9 +226,5 @@ void CMainGame::Select_AttackAndRun()
 void CMainGame::Release()
 {
 	SAFE_DELETE(m_pShop);
-	SAFE_DELETE(m_pCloset);
-	SAFE_DELETE(m_pInteraction);
-	SAFE_DELETE(m_pPlayer);
-	SAFE_DELETE(m_pEnemy);
 }
 
