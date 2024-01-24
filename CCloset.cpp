@@ -1,16 +1,19 @@
 #include "CCloset.h"
-CCloset::CCloset()
+#include "Player.h"
+
+
+CCloset::CCloset(Creature* _pPlayer) : m_pInventory(nullptr), m_pPlayerCopy(nullptr)
 {
-	m_pInventory = nullptr;
+	m_pPlayerCopy = dynamic_cast<Player*>(_pPlayer);
+	m_pInventory = m_pPlayerCopy->GetInventoryP();
 }
 
 CCloset::~CCloset()
 {
 }
 
-void CCloset::Initialize(CInventory* _pInventory)
+void CCloset::Initialize()
 {
-	m_pInventory = _pInventory;
 }
 
 void CCloset::Update()
