@@ -1,16 +1,18 @@
 #pragma once
 #include "stdafx.h"
 #include "CInventory.h"
+#include "Player.h"
 class CCloset
 {
 public:
-	CCloset();
+	CCloset(Creature* _pPlayer);
 	~CCloset();
 public:
-	void Initialize(CInventory* _pInventory);
+	void Initialize();
 	void	Update();
 	void	Release();
 private:
+	Player* m_pPlayerCopy;
 	CInventory* m_pInventory;
 };
 

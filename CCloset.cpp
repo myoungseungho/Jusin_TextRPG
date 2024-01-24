@@ -1,16 +1,19 @@
 #include "CCloset.h"
-CCloset::CCloset()
+#include "Player.h"
+
+
+CCloset::CCloset(Creature* _pPlayer) : m_pInventory(nullptr), m_pPlayerCopy(nullptr)
 {
-	m_pInventory = nullptr;
+	m_pPlayerCopy = dynamic_cast<Player*>(_pPlayer);
+	m_pInventory = m_pPlayerCopy->GetInventoryP();
 }
 
 CCloset::~CCloset()
 {
 }
 
-void CCloset::Initialize(CInventory* _pInventory)
+void CCloset::Initialize()
 {
-	m_pInventory = _pInventory;
 }
 
 void CCloset::Update()
@@ -33,14 +36,13 @@ void CCloset::Update()
 			cout << "==============" << endl << endl;
 			m_pInventory->PrintEquipmentStatus();
 			cout << endl << endl;
-			cout << "어떤 장비를 착용하시겠습니까? (0번 되돌아가기)" << endl;
+			cout << "어떤 장비를 착용하시겠습니까?" << endl;
 			cin >> iInput;
-
-			if (iInput == 0)
-				return;
 
 			vector<CItem*>* vec = m_pInventory->GetVecItemInfo();
 			m_pInventory->SetItem(((*vec)[iInput - 1]));
+			m_pInventory->PrintEquipmentStatus();
+			system("pause");
 		}
 	}
 }

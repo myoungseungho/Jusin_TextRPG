@@ -3,6 +3,16 @@
 #define		SAFE_DELETE(p)			if(p) { delete p; p = nullptr;}
 #define		SAFE_DELETE_ARRAY(p)	if(p) { delete []p; p = nullptr;}
 
+template<typename T>
+void Safe_Delete(T& p)
+{
+	if (p)
+	{
+		delete p;
+		p = nullptr;
+	}
+};
+
 typedef struct tagInfo
 {
 	tagInfo()
@@ -15,28 +25,32 @@ typedef struct tagInfo
 	int iHp, iAttack;
 }INFO;
 
-typedef struct AttackItemInfo
+typedef struct ItemInfo
 {
-	AttackItemInfo(string _sName, int _iLevel, int _iPrice, int _iAttack)
+	ItemInfo()
 	{
-		sName = _sName;
-		iLevel = _iLevel;
-		iPrice = _iPrice;
-		iAttack = _iAttack;
+		sName = "";
+		iLevel = 0;
+		iPrice = 0;
 	}
 	string sName;
-	int iLevel, iAttack, iPrice;
+	int iLevel, iPrice;
 };
 
-typedef struct DefensiveItemInfo
+typedef struct AttackItemInfo : public ItemInfo
 {
-	DefensiveItemInfo(string _sName, int _iLevel, int _iPrice, int _iDef)
+	AttackItemInfo()
 	{
-		sName = _sName;
-		iLevel = _iLevel;
-		iPrice = _iPrice;
-		iDef = _iDef;
+		iAttack = 0;
 	}
-	string sName;
-	int iLevel, iDef, iPrice;
+	int iAttack;
+};
+
+typedef struct DefensiveItemInfo : public ItemInfo
+{
+	DefensiveItemInfo()
+	{
+		iDef = 0;
+	}
+	int iDef;
 };

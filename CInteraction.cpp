@@ -23,8 +23,8 @@ void CInteraction::Initialize(Player* _pPlayer, Enemy* _pEnemy)
 
 void CInteraction::Attack()
 {
-	INFO* playerInfo = m_pPlayer->GetInfo();
-	INFO* enemyInfo = m_pEnemy->GetInfo();
+	INFO playerInfo = m_pPlayer->GetInfo();
+	INFO enemyInfo = m_pEnemy->GetInfo();
 
 	m_pPlayer->Set_Damage(m_pEnemy->Get_Attack());
 	m_pEnemy->Set_Damage(m_pPlayer->Get_Attack());

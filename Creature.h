@@ -16,10 +16,10 @@ public:
 	int Get_Attack();
 	bool IsDie();
 
-	INFO* GetInfo();
+	INFO GetInfo();
 public:
 	virtual void Input_Data(int _iInput) = 0;
 protected:
-	INFO* m_pInfo;
+	INFO m_Info;
 };
 

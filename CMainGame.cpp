@@ -4,14 +4,7 @@
 #include "Level2_Shop.h"
 #include "Level3_Shop.h"
 #include "CCloset.h"
-CMainGame::CMainGame()
-{
-	m_pPlayer = nullptr;
-	m_pEnemy = nullptr;
-	m_pInteraction = nullptr;
-	m_pShop = nullptr;
-	m_pCloset = nullptr;
-}
+CMainGame::CMainGame() : m_pPlayer(nullptr), m_pEnemy(nullptr), m_pInteraction(nullptr), m_pShop(nullptr), m_pCloset(nullptr) {}
 
 CMainGame::~CMainGame()
 {
@@ -98,8 +91,8 @@ void CMainGame::SelectCloset()
 {
 	if (m_pCloset == nullptr)
 	{
-		m_pCloset = new CCloset;
-		m_pCloset->Initialize((dynamic_cast<Player*>(m_pPlayer))->GetInventoryP());
+		m_pCloset = new CCloset(m_pPlayer);
+		m_pCloset->Initialize();
 	}
 
 	m_pCloset->Update();
@@ -199,12 +192,12 @@ void CMainGame::Select_AttackAndRun()
 			case PLAYERDIE:
 				cout << "ÇÃ·¹ÀÌ¾î »ç¸Á" << endl;
 				m_pPlayer->Input_Data(0);
-				SAFE_DELETE(m_pEnemy);
+				Safe_Delete(m_pEnemy);
 				system("pause");
 				return;
 			case ENEMYDIE:
 				cout << "½Â¸®" << endl;
-				SAFE_DELETE(m_pEnemy);
+				Safe_Delete(m_pEnemy);
 				system("pause");
 				return;
 			case 0:
@@ -213,7 +206,7 @@ void CMainGame::Select_AttackAndRun()
 		}
 		else if (iInput == 2)
 		{
-			SAFE_DELETE(m_pEnemy);
+			Safe_Delete(m_pEnemy);
 			return;
 		}
 		else
@@ -225,10 +218,10 @@ void CMainGame::Select_AttackAndRun()
 
 void CMainGame::Release()
 {
-	SAFE_DELETE(m_pShop);
-	SAFE_DELETE(m_pCloset);
-	SAFE_DELETE(m_pInteraction);
-	SAFE_DELETE(m_pPlayer);
-	SAFE_DELETE(m_pEnemy);
+	Safe_Delete(m_pPlayer);
+	Safe_Delete(m_pEnemy);
+	Safe_Delete(m_pInteraction);
+	Safe_Delete(m_pShop);
+	Safe_Delete(m_pCloset);
 }
 
